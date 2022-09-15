@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Plexxis Interview Coding Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This CRUD application can perform the following tasks:
+  - Retrieve employees from a REST API
+  - Display the employees in a React application
+  - Create and delete employees
 
-## Available Scripts
+## Libraries Used
+Axios
+  - Axios is a library that serves to create HTTP requests that are present externally
+  - The axios functions are found in api.js
 
-In the project directory, you can run:
+React-Bootstrap
+  - React Bootstrap is a library of components that have been built from scratch as a true React component
 
-### `npm start`
+## Where my effort was focused
+I created two custom components to complete this assignment: AddEmployee and EmployeeList.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### AddEmployee
+AddEmployee was made using Forms from react-bootstrap. It provides a fillable form for the user to enter information about the employee they want to add. 
+Assumptions made:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    - A new employees id number is always 1 greater than the current largest id number.
+    e.g. Vince Carter is the last employee added and has an id number of 7. Therefore the next employee added will have an id number of 8. 
 
-### `npm test`
+    - A new employees code is always F10X where X = id number + 99.
+    e.g. Vince Carter's id number is 7. To find his code we perform F10(7 + 99) = F106.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - The only branches available are the ones provided. If there are more they can be added as options.
+    
+This compnent has 2 functions:
+  1. onValueChange
+    - updates employee information to the value of the changed form.
 
-### `npm run build`
+  2. addEmployeeData"
+    - uses Axios function to add the new employee to the JSON file
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### EmployeeList
+EmployeeList was made with a Table component from react-bootstrap. It shows a list of the current employees in the JSON file.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This component has 1 function:
+  1. deleteEmployeeData
+    - uses Axios function to delete an employee from the Table and JSON file. Once completed it will reload the page.
