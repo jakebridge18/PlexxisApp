@@ -1,0 +1,30 @@
+h1 {
+  font-size: 48px;
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.h2 {
+  font-size: 24px;
+}
+
+.App {
+  padding: 20px;
+}
+
+.float-container {
+  padding: 20px;
+}
+
+.float-child {
+  border: 2px solid black;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: medium;
+  width: 48%;
+  float: left;
+  padding: 20px;
+  margin: 1%;
+  
+}  
